@@ -8,7 +8,7 @@ import pyforgejo.types.issue as _issue
 from pyforgejo import NotFoundError
 
 from ogr.abstract import Issue, IssueComment, IssueLabel, IssueStatus
-from ogr.exceptions import IssueTrackerDisabled, OperationNotSupported
+from ogr.exceptions import IssueTrackerDisabled
 from ogr.services import forgejo
 from ogr.services.base import BaseIssue
 from ogr.services.forgejo.comments import ForgejoIssueComment
