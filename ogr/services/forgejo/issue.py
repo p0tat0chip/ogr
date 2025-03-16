@@ -154,7 +154,7 @@ class ForgejoIssue(BaseIssue):
         except NotFoundError as ex:
             if "user does not exist" in str(ex):
                 return []
-            raise OperationNotSupported(f"Failed to list issues {ex}") from ex
+            raise NotFoundError(f"Failed to list issues {ex}") from ex
         return [ForgejoIssue(issue, project) for issue in issues]
 
     def close(self) -> "Issue":
