@@ -17,8 +17,10 @@ class ForgejoLabel(Label):
     def name(self):
         return self._name
 
+
 class ForgejoPRLabel(ForgejoLabel, PRLabel):
     pass
+
 
 class ForgejoIssueLabel(ForgejoLabel, IssueLabel):
     pass
