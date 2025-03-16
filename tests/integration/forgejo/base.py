@@ -1,19 +1,21 @@
+# Copyright Contributors to the Packit project.
+# SPDX-License-Identifier: MIT
+
+import os
 import unittest
 from pathlib import Path
 
 from requre.utils import get_datafile_filename
 
 from ogr import ForgejoService
-import os
+
 
 class ForgejoTests(unittest.TestCase):
     def setUp(self):
         self._service = None
         self._project = None
         self._token = os.environ.get("FORGEJO_TOKEN")
-        if not Path(get_datafile_filename(obj=self)).exists() and (
-            not self._token
-        ):
+        if not Path(get_datafile_filename(obj=self)).exists() and (not self._token):
             raise OSError(
                 "You are in requre write mode, please set FORGEJO_TOKEN env variable",
             )
